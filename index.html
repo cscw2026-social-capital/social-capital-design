@@ -1,38 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>CSCW 2026 Workshop</title>
-    <style>
-        body { 
-            font-family: sans-serif; 
-            line-height: 1.6; 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-            color: #333; 
-        }
-        h1 { 
-            color: #2c3e50;
-            background-color: #e4ebfc;
-            padding: 20px;
-            border-radius: 8px; 
-        }
-        .status { 
-            color: #666; 
-            font-style: italic; 
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSCW 2026 Workshop | Co-Constructing Social Capital</title>
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #cfe3ff;
+      --accent-dark: #2c3e50;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-title {
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .hero {
+      margin-bottom: 40px;
+    }
+
+    .hero-label {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      color: var(--accent-dark);
+      background: var(--accent);
+      padding: 24px;
+      border-radius: 14px;
+      font-size: 2.2rem;
+      line-height: 1.25;
+    }
+
+    .hero-meta {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 0;
+    }
+
+    section {
+      margin-top: 54px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: var(--accent-dark);
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .organizers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .organizer {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .organizer h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: var(--accent-dark);
+    }
+
+    .organizer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .agenda-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .agenda-item:last-child {
+      border-bottom: none;
+    }
+
+    .agenda-time {
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .agenda-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 70px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .agenda-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Co-Constructing Social Capital: Opportunities, Tensions, and Reimagining Community-Centered Design</h1>
-    <p class="status">
-        Worshop organizers: 
-SHAN KUO, University of Guelph, Canada
-STACEY SCOTT, University of Guelph, Canada
-JUNJIE MA, George Mason University, United States
-ZHICONG LU, George Mason University, United States
-JIE CAI, Tsinghua University, China
-ANKOLIKA DE, Pennsylvania State University, USA</p>
+  <header>
+    <nav class="nav">
+      <div class="nav-title">CSCW 2026 Workshop</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#organizers">Co-Organizers</a>
+        <a href="#agenda">Workshop Agenda</a>
+        <a href="#cfp">Call for Participation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div class="hero-label">CSCW 2026 Workshop</div>
+      <h1>Co-Constructing Social Capital: Opportunities, Tensions, and Reimagining Community-Centered Design</h1>
+      <div class="hero-meta">
+        Full-day workshop | 9:00 AM – 4:30 PM
+      </div>
+      <p>
+        This workshop brings together interdisciplinary researchers and practitioners to examine how community-centered design can evolve through community strength-based design and co-constructing with communities. It focuses on how sociotechnical systems, including AI-mediated systems, can better support belonging, trust, reciprocity, and resilient forms of social capital across diverse communities.
+      </p>
+    </section>
+
+    <section id="organizers">
+      <h2>Co-Organizers</h2>
+      <div class="organizers">
+        <div class="organizer">
+          <h3>Shan Kuo</h3>
+          <p>University of Guelph, Canada</p>
+        </div>
+        <div class="organizer">
+          <h3>Stacey Scott</h3>
+          <p>University of Guelph, Canada</p>
+        </div>
+        <div class="organizer">
+          <h3>Junjie Ma</h3>
+          <p>George Mason University, United States</p>
+        </div>
+        <div class="organizer">
+          <h3>Zhicong Lu</h3>
+          <p>George Mason University, United States</p>
+        </div>
+        <div class="organizer">
+          <h3>Jie Cai</h3>
+          <p>Tsinghua University, China</p>
+        </div>
+        <div class="organizer">
+          <h3>Ankolika De</h3>
+          <p>Pennsylvania State University, USA</p>
+        </div>
+        <div class="organizer">
+          <h3>Lana Yarosh</h3>
+          <p>University of Minnesota, USA</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="agenda">
+      <h2>Workshop Agenda</h2>
+      <div class="card">
+        <div class="agenda-item">
+          <div class="agenda-time">09:00–09:15</div>
+          <div>
+            <div class="agenda-title">Opening & Welcome</div>
+            <div>Introduction to workshop goals, themes, and format.</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">09:15–10:00</div>
+          <div>
+            <div class="agenda-title">Lightning Talks</div>
+            <div>Short talks from one organizer and selected participants highlighting key concepts and emerging challenges.</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">10:00–10:15</div>
+          <div>
+            <div class="agenda-title">Coffee Break</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">10:15–11:15</div>
+          <div>
+            <div class="agenda-title">Panel Discussion</div>
+            <div>Critical discussion of community-centered design and the co-construction of social capital in digitally mediated settings.</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">11:15–11:30</div>
+          <div>
+            <div class="agenda-title">Rapport-Building Activity</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">11:30–12:15</div>
+          <div>
+            <div class="agenda-title">Group Discussion 1</div>
+            <div>Community-centered design knowledge, assumptions, and methodologies.</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">12:15–13:15</div>
+          <div>
+            <div class="agenda-title">Lunch Break</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">13:15–14:00</div>
+          <div>
+            <div class="agenda-title">Group Discussion 2</div>
+            <div>Community strengths, belonging, and co-constructing social capital.</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">14:00–14:15</div>
+          <div>
+            <div class="agenda-title">Coffee Break</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">14:15–15:15</div>
+          <div>
+            <div class="agenda-title">Group Discussion 3</div>
+            <div>Tensions, trade-offs, and AI-mediated participation.</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">15:15–15:25</div>
+          <div>
+            <div class="agenda-title">Coffee Break</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">15:25–16:10</div>
+          <div>
+            <div class="agenda-title">Knowledge Synthesis</div>
+            <div>Cross-group sharing, synthesis, and discussion of future research directions.</div>
+          </div>
+        </div>
+
+        <div class="agenda-item">
+          <div class="agenda-time">16:10–16:30</div>
+          <div>
+            <div class="agenda-title">Closing Remark</div>
+            <div>Wrap-up and discussion of collaboration opportunities, including publications and future workshops.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cfp">
+      <h2>Call for Participation</h2>
+      <div class="card">
+        <p>
+          We invite interdisciplinary researchers and practitioners working with subcultural, transnational, diaspora, and vulnerable communities, as well as those engaging with social capital, community-centered design, platform governance, AI-mediated interaction, and equity in digital environments.
+        </p>
+
+        <p>
+          We particularly welcome critical, reflexive, and strength-based approaches that build on existing community practices, capacities, and resilience. Our goal is to assemble a cohort that balances theoretical, methodological, and applied perspectives across diverse community contexts, geographic regions, and career stages.
+        </p>
+
+        <h3>Submission Format</h3>
+        <ul>
+          <li>2–4 page position statement</li>
+          <li>ACM single-column format</li>
+          <li>Accessible PDF preferred</li>
+        </ul>
+
+        <h3>Submissions should include</h3>
+        <ul>
+          <li>A description of the author’s research or practice area</li>
+          <li>Their positionality and relationship to the communities they engage with</li>
+          <li>How their work connects to the workshop, especially in fostering or challenging social capital</li>
+          <li>A key tension, open question, or design opportunity in community-centered sociotechnical systems</li>
+        </ul>
+
+        <h3>Review Process</h3>
+        <p>
+          Submissions will be reviewed by the organizing team based on relevance, diversity of perspectives, and potential contribution to workshop discussions.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      CSCW 2026 Workshop Website | Co-Constructing Social Capital
+    </footer>
+  </main>
 </body>
 </html>
