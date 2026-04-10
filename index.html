@@ -6,13 +6,15 @@
   <title>CSCW 2026 Workshop | Co-Constructing Social Capital</title>
   <style>
     :root {
-      --bg: #f9fafb;
+      --bg: #dfeee8;
       --text: #1f2937;
       --muted: #6b7280;
-      --accent: #cfe3ff;
-      --accent-dark: #2c3e50;
+      --accent: #d9e8ff;
+      --accent-dark: #1f3a5f;
       --card: #ffffff;
       --border: #e5e7eb;
+      --banner-top: #1f3a5f;
+      --banner-bottom: #3b5d87;
     }
 
     * {
@@ -73,35 +75,42 @@
       padding: 40px 20px 80px;
     }
 
-    .hero {
-      margin-bottom: 40px;
+    .hero-banner {
+      background: linear-gradient(135deg, var(--banner-top), var(--banner-bottom));
+      color: white;
+      border-radius: 18px;
+      padding: 56px 32px;
+      text-align: center;
+      margin-bottom: 42px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     }
 
-    .hero-label {
+    .hero-banner .label {
       font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 14px;
     }
 
-    .hero h1 {
-      margin: 0 0 18px;
-      color: var(--accent-dark);
-      background: var(--accent);
-      padding: 24px;
-      border-radius: 14px;
-      font-size: 2.2rem;
+    .hero-banner h1 {
+      margin: 0 auto 18px;
+      max-width: 900px;
+      font-size: 2.35rem;
       line-height: 1.25;
+      font-weight: 700;
     }
 
-    .hero-meta {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 18px;
+    .hero-banner .subtitle {
+      font-size: 1.08rem;
+      max-width: 780px;
+      margin: 0 auto 14px;
+      opacity: 0.95;
     }
 
-    .hero p {
-      max-width: 850px;
-      margin: 0;
+    .hero-banner .meta {
+      font-size: 0.98rem;
+      opacity: 0.9;
     }
 
     section {
@@ -116,11 +125,26 @@
       padding-bottom: 8px;
     }
 
+    h3 {
+      color: var(--accent-dark);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 20px;
+    }
+
+    .notice {
+      background-color: #fff3cd;
+      border-left: 5px solid #d4a017;
+      padding: 14px 16px;
+      margin: 20px 0;
+      font-weight: 600;
+      border-radius: 8px;
     }
 
     .organizers {
@@ -139,7 +163,6 @@
     .organizer h3 {
       margin: 0 0 6px;
       font-size: 1.05rem;
-      color: var(--accent-dark);
     }
 
     .organizer p {
@@ -182,8 +205,12 @@
     }
 
     @media (max-width: 700px) {
-      .hero h1 {
-        font-size: 1.7rem;
+      .hero-banner {
+        padding: 40px 22px;
+      }
+
+      .hero-banner h1 {
+        font-size: 1.75rem;
       }
 
       .agenda-item {
@@ -207,19 +234,17 @@
   </header>
 
   <main class="container">
-    <section class="hero" id="home">
-      <div class="hero-label">CSCW 2026 Workshop</div>
+    <section class="hero-banner" id="home">
+      <div class="label">CSCW 2026 Workshop</div>
       <h1>Co-Constructing Social Capital: Opportunities, Tensions, and Reimagining Community-Centered Design</h1>
-      <div class="hero-meta">
-        Full-day workshop | 9:00 AM – 4:30 PM
-      </div>
-      <p>
-        This workshop brings together interdisciplinary researchers and practitioners to examine how community-centered design can evolve through community strength-based design and co-constructing with communities. It focuses on how sociotechnical systems, including AI-mediated systems, can better support belonging, trust, reciprocity, and resilient forms of social capital across diverse communities.
+      <p class="subtitle">
+        Examining how community-centered design can evolve through community strength-based approaches and co-construction with communities in sociotechnical and AI-mediated environments.
       </p>
+      <div class="meta">Full-day workshop | 9:00 AM – 4:30 PM</div>
     </section>
 
     <section id="organizers">
-      <h2>Co-Organizers</h2>
+      <h2>Organizers</h2>
       <div class="organizers">
         <div class="organizer">
           <h3>Shan Kuo</h3>
@@ -259,7 +284,7 @@
           <div class="agenda-time">09:00–09:15</div>
           <div>
             <div class="agenda-title">Opening & Welcome</div>
-            <div>Introduction to workshop goals, themes, and format.</div>
+            <div>Introduction to workshop goals, themes, and agenda.</div>
           </div>
         </div>
 
@@ -267,7 +292,7 @@
           <div class="agenda-time">09:15–10:00</div>
           <div>
             <div class="agenda-title">Lightning Talks</div>
-            <div>Short talks from one organizer and selected participants highlighting key concepts and emerging challenges.</div>
+            <div>Short talks from an organizer and selected participants, highlighting key concepts and emerging challenges.</div>
           </div>
         </div>
 
@@ -342,7 +367,7 @@
           <div class="agenda-time">15:25–16:10</div>
           <div>
             <div class="agenda-title">Knowledge Synthesis</div>
-            <div>Cross-group sharing, synthesis, and discussion of future research directions.</div>
+            <div>Cross-group sharing, collective reflection, and open discussion of future research directions.</div>
           </div>
         </div>
 
@@ -359,13 +384,16 @@
     <section id="cfp">
       <h2>Call for Participation</h2>
       <div class="card">
+        <div class="notice">
+          All participants are required to attend the workshop in person.
+        </div>
+
         <p>
           We invite interdisciplinary researchers and practitioners working with subcultural, transnational, diaspora, and vulnerable communities, as well as those engaging with social capital, community-centered design, platform governance, AI-mediated interaction, and equity in digital environments.
         </p>
 
         <p>
-          We particularly welcome critical, reflexive, and strength-based approaches that build on existing community practices, capacities, and resilience. Our goal is to assemble a cohort that balances theoretical, methodological, and applied perspectives across diverse community contexts, geographic regions, and career stages. <strong>All participants are required to attend the workshop in person.</strong>
-
+          We particularly welcome critical, reflexive, and strength-based approaches that build on existing community practices, capacities, and resilience. Our goal is to assemble a cohort that balances theoretical, methodological, and applied perspectives across diverse community contexts, geographic regions, and career stages.
         </p>
 
         <h3>Submission Format</h3>
